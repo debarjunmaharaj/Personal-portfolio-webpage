@@ -82,6 +82,10 @@ Message: ${formData.message}
     window.open('https://wa.me/+919876543210?text=Hi%20Debarjun%2C%20I%27m%20interested%20in%20your%20services', '_blank');
   };
 
+  const openFacebookPage = () => {
+    window.open('https://www.facebook.com/netfieofficial', '_blank');
+  };
+
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -112,7 +116,7 @@ Message: ${formData.message}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 className="bg-developer-purple hover:bg-developer-purple/90 text-white"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={openFacebookPage}
               >
                 Hire Me
                 <ArrowRight className="ml-2 h-4 w-4" />
