@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import AnimatedCube from '@/components/AnimatedCube';
@@ -10,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Slider } from '@/components/ui/slider';
 import { useToast } from '@/components/ui/use-toast';
 import { Card, CardContent } from '@/components/ui/card';
-import { Github, Linkedin, Instagram, Mail, PhoneCall, Send, Code, Layers, PenTool, Database, Globe, ArrowRight, Award } from 'lucide-react';
+import { Github, Linkedin, Instagram, Mail, PhoneCall, Send, Code, Layers, PenTool, Database, Globe, ArrowRight, Award, FileType, Monitor, Server } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Index = () => {
@@ -25,7 +24,6 @@ const Index = () => {
     message: ''
   });
 
-  // Parallax effect for background elements
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!parallaxRef.current) return;
@@ -62,13 +60,11 @@ const Index = () => {
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Here you would handle the actual form submission
     toast({
       title: "Redirecting to WhatsApp",
       description: "Opening WhatsApp to send your message directly.",
     });
 
-    // Construct WhatsApp message
     const message = `
 Name: ${formData.name}
 Email: ${formData.email}
@@ -77,10 +73,8 @@ Budget: ${budget.toLocaleString()} BDT
 Message: ${formData.message}
     `;
 
-    // URL encode the message
     const encodedMessage = encodeURIComponent(message);
     
-    // Open WhatsApp with the pre-filled message
     window.open(`https://wa.me/+919876543210?text=${encodedMessage}`, '_blank');
   };
 
@@ -88,7 +82,6 @@ Message: ${formData.message}
     window.open('https://wa.me/+919876543210?text=Hi%20Debarjun%2C%20I%27m%20interested%20in%20your%20services', '_blank');
   };
 
-  // Function to handle scrolling to sections (was missing before)
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -97,9 +90,7 @@ Message: ${formData.message}
     <div className="min-h-screen">
       <Navbar />
       
-      {/* Hero Section */}
       <section id="home" className="min-h-screen relative overflow-hidden flex flex-col justify-center" ref={parallaxRef}>
-        {/* Background decorative elements */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-developer-purple/10 rounded-full filter blur-3xl parallax-item" data-depth="0.1"></div>
           <div className="absolute bottom-1/3 left-1/3 w-96 h-96 bg-developer-blue/10 rounded-full filter blur-3xl parallax-item" data-depth="0.2"></div>
@@ -150,14 +141,12 @@ Message: ${formData.message}
           
           <div className="lg:w-1/2 flex justify-center relative mt-12 lg:mt-0">
             <div className="relative w-72 h-72 md:w-96 md:h-96 rotate-y perspective">
-              {/* Profile image */}
               <img 
                 src="https://images.unsplash.com/photo-1580518324671-c2f0833a3af3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                 alt="Debarjun Chakraborty" 
                 className="w-full h-full object-cover rounded-2xl shadow-2xl"
               />
               
-              {/* 3D elements */}
               <div className="absolute -top-16 -left-16 w-32 h-32 animate-float z-10">
                 <AnimatedCube />
               </div>
@@ -165,7 +154,6 @@ Message: ${formData.message}
                 <AnimatedSphere />
               </div>
               
-              {/* Tech stack badges */}
               <div className="absolute top-4 -right-8 bg-white dark:bg-gray-800 px-4 py-2 rounded-full shadow-lg font-medium text-sm animate-float">
                 React
               </div>
@@ -179,7 +167,6 @@ Message: ${formData.message}
           </div>
         </div>
         
-        {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
           <span className="text-sm mb-2">Scroll Down</span>
           <div className="w-5 h-10 border-2 border-gray-400 rounded-full flex justify-center">
@@ -188,7 +175,6 @@ Message: ${formData.message}
         </div>
       </section>
       
-      {/* Services Section */}
       <section id="services" className="py-20 bg-gray-50 dark:bg-developer-dark/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -199,7 +185,6 @@ Message: ${formData.message}
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Service 1 */}
             <Card className="service-card border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-all">
               <CardContent className="pt-6">
                 <div className="h-14 w-14 bg-developer-purple/10 rounded-xl flex items-center justify-center mb-6">
@@ -226,7 +211,6 @@ Message: ${formData.message}
               </CardContent>
             </Card>
             
-            {/* Service 2 */}
             <Card className="service-card border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-all">
               <CardContent className="pt-6">
                 <div className="h-14 w-14 bg-developer-blue/10 rounded-xl flex items-center justify-center mb-6">
@@ -253,7 +237,6 @@ Message: ${formData.message}
               </CardContent>
             </Card>
             
-            {/* Service 3 */}
             <Card className="service-card border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-all">
               <CardContent className="pt-6">
                 <div className="h-14 w-14 bg-developer-teal/10 rounded-xl flex items-center justify-center mb-6">
@@ -280,7 +263,6 @@ Message: ${formData.message}
               </CardContent>
             </Card>
             
-            {/* Service 4 */}
             <Card className="service-card border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-all">
               <CardContent className="pt-6">
                 <div className="h-14 w-14 bg-developer-purple/10 rounded-xl flex items-center justify-center mb-6">
@@ -307,7 +289,6 @@ Message: ${formData.message}
               </CardContent>
             </Card>
             
-            {/* Service 5 */}
             <Card className="service-card border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-all">
               <CardContent className="pt-6">
                 <div className="h-14 w-14 bg-developer-blue/10 rounded-xl flex items-center justify-center mb-6">
@@ -334,7 +315,6 @@ Message: ${formData.message}
               </CardContent>
             </Card>
             
-            {/* Service 6 */}
             <Card className="service-card border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-all">
               <CardContent className="pt-6">
                 <div className="h-14 w-14 bg-developer-teal/10 rounded-xl flex items-center justify-center mb-6">
@@ -364,7 +344,6 @@ Message: ${formData.message}
         </div>
       </section>
       
-      {/* Portfolio Section */}
       <section id="portfolio" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -375,7 +354,6 @@ Message: ${formData.message}
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Project 1 */}
             <div className="group perspective">
               <div className="rotate-y relative overflow-hidden rounded-xl">
                 <img 
@@ -397,7 +375,6 @@ Message: ${formData.message}
               </div>
             </div>
             
-            {/* Project 2 */}
             <div className="group perspective">
               <div className="rotate-y relative overflow-hidden rounded-xl">
                 <img 
@@ -419,7 +396,6 @@ Message: ${formData.message}
               </div>
             </div>
             
-            {/* Project 3 */}
             <div className="group perspective">
               <div className="rotate-y relative overflow-hidden rounded-xl">
                 <img 
@@ -441,7 +417,6 @@ Message: ${formData.message}
               </div>
             </div>
             
-            {/* Project 4 */}
             <div className="group perspective">
               <div className="rotate-y relative overflow-hidden rounded-xl">
                 <img 
@@ -463,7 +438,6 @@ Message: ${formData.message}
               </div>
             </div>
             
-            {/* Project 5 */}
             <div className="group perspective">
               <div className="rotate-y relative overflow-hidden rounded-xl">
                 <img 
@@ -485,7 +459,6 @@ Message: ${formData.message}
               </div>
             </div>
             
-            {/* Project 6 */}
             <div className="group perspective">
               <div className="rotate-y relative overflow-hidden rounded-xl">
                 <img 
@@ -519,7 +492,6 @@ Message: ${formData.message}
         </div>
       </section>
       
-      {/* About Section */}
       <section id="about" className="py-20 bg-gray-50 dark:bg-developer-dark/30">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -531,7 +503,6 @@ Message: ${formData.message}
                   className="w-full rounded-2xl shadow-xl"
                 />
                 
-                {/* Experience badge */}
                 <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 px-6 py-4 rounded-xl shadow-lg flex items-center gap-2">
                   <div className="h-10 w-10 bg-developer-purple/10 rounded-full flex items-center justify-center">
                     <Award className="h-5 w-5 text-developer-purple" />
@@ -577,25 +548,25 @@ Message: ${formData.message}
               <h3 className="text-xl font-bold mb-4">My Skills</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <div className="flex flex-col">
-                  <span className="text-sm font-medium mb-1">React.js</span>
+                  <span className="text-sm font-medium mb-1">HTML/CSS</span>
                   <div className="h-2 w-full bg-gray-200 rounded">
                     <div className="h-full bg-developer-purple rounded" style={{ width: '95%' }}></div>
                   </div>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm font-medium mb-1">Node.js</span>
+                  <span className="text-sm font-medium mb-1">WordPress</span>
                   <div className="h-2 w-full bg-gray-200 rounded">
                     <div className="h-full bg-developer-purple rounded" style={{ width: '90%' }}></div>
                   </div>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm font-medium mb-1">TypeScript</span>
+                  <span className="text-sm font-medium mb-1">PHP</span>
                   <div className="h-2 w-full bg-gray-200 rounded">
                     <div className="h-full bg-developer-purple rounded" style={{ width: '85%' }}></div>
                   </div>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm font-medium mb-1">MongoDB</span>
+                  <span className="text-sm font-medium mb-1">Laravel</span>
                   <div className="h-2 w-full bg-gray-200 rounded">
                     <div className="h-full bg-developer-purple rounded" style={{ width: '80%' }}></div>
                   </div>
@@ -607,7 +578,7 @@ Message: ${formData.message}
                   </div>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm font-medium mb-1">DevOps</span>
+                  <span className="text-sm font-medium mb-1">Social Media Marketing</span>
                   <div className="h-2 w-full bg-gray-200 rounded">
                     <div className="h-full bg-developer-purple rounded" style={{ width: '75%' }}></div>
                   </div>
@@ -618,7 +589,6 @@ Message: ${formData.message}
         </div>
       </section>
       
-      {/* Contact Section */}
       <section id="contact" className="py-20 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -792,12 +762,10 @@ Message: ${formData.message}
           </div>
         </div>
         
-        {/* Decorative shapes */}
         <div className="contact-shape w-64 h-64 top-20 -left-32"></div>
         <div className="contact-shape w-96 h-96 bottom-10 -right-48"></div>
       </section>
       
-      {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
