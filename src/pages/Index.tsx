@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import AnimatedCube from '@/components/AnimatedCube';
 import AnimatedSphere from '@/components/AnimatedSphere';
@@ -17,6 +17,13 @@ const Index = () => {
   const isMobile = useIsMobile();
   const { toast } = useToast();
   const parallaxRef = useRef<HTMLDivElement>(null);
+  const [budget, setBudget] = useState<number>(10000);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    projectType: 'website',
+    message: ''
+  });
 
   // Parallax effect for background elements
   useEffect(() => {
@@ -39,18 +46,51 @@ const Index = () => {
     return () => document.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData(prev => ({ ...prev, projectType: value }));
+  };
+
+  const handleBudgetChange = (value: number[]) => {
+    setBudget(value[0]);
+  };
+
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
     // Here you would handle the actual form submission
     toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
+      title: "Redirecting to WhatsApp",
+      description: "Opening WhatsApp to send your message directly.",
     });
+
+    // Construct WhatsApp message
+    const message = `
+Name: ${formData.name}
+Email: ${formData.email}
+Project Type: ${formData.projectType}
+Budget: ${budget.toLocaleString()} BDT
+Message: ${formData.message}
+    `;
+
+    // URL encode the message
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Open WhatsApp with the pre-filled message
+    window.open(`https://wa.me/+919876543210?text=${encodedMessage}`, '_blank');
   };
 
   const openWhatsApp = () => {
     window.open('https://wa.me/+919876543210?text=Hi%20Debarjun%2C%20I%27m%20interested%20in%20your%20services', '_blank');
+  };
+
+  // Function to handle scrolling to sections (was missing before)
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -595,17 +635,30 @@ const Index = () => {
               <form onSubmit={handleContactSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
-                  <Input id="name" placeholder="John Doe" required />
+                  <Input 
+                    id="name" 
+                    placeholder="John Doe" 
+                    required 
+                    value={formData.name} 
+                    onChange={handleInputChange}
+                  />
                 </div>
                 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2">Email Address</label>
-                  <Input id="email" type="email" placeholder="john@example.com" required />
+                  <Input 
+                    id="email" 
+                    type="email" 
+                    placeholder="john@example.com" 
+                    required 
+                    value={formData.email} 
+                    onChange={handleInputChange}
+                  />
                 </div>
                 
                 <div>
                   <label htmlFor="project" className="block text-sm font-medium mb-2">Project Type</label>
-                  <Select>
+                  <Select defaultValue={formData.projectType} onValueChange={handleSelectChange}>
                     <SelectTrigger>
                       <SelectValue placeholder="Select project type" />
                     </SelectTrigger>
@@ -621,24 +674,37 @@ const Index = () => {
                 
                 <div>
                   <label htmlFor="budget" className="block text-sm font-medium mb-2">
-                    Budget Range: <span className="font-bold">$500 - $5000</span>
+                    Budget Range: <span className="font-bold">{budget.toLocaleString()} BDT</span>
                   </label>
-                  <Slider defaultValue={[1000]} min={500} max={5000} step={100} />
+                  <Slider 
+                    defaultValue={[10000]} 
+                    min={3900} 
+                    max={50000} 
+                    step={100} 
+                    onValueChange={handleBudgetChange}
+                  />
                 </div>
                 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2">Your Message</label>
-                  <Textarea id="message" placeholder="Tell me about your project..." rows={5} required />
+                  <Textarea 
+                    id="message" 
+                    placeholder="Tell me about your project..." 
+                    rows={5} 
+                    required 
+                    value={formData.message} 
+                    onChange={handleInputChange}
+                  />
                 </div>
                 
                 <div className="flex space-x-4">
                   <Button type="submit" className="bg-developer-purple hover:bg-developer-purple/90 flex-1">
                     <Send className="mr-2 h-4 w-4" />
-                    Send Message
+                    Send via WhatsApp
                   </Button>
                   
                   <Button type="button" onClick={openWhatsApp} variant="outline" className="border-developer-purple text-developer-purple hover:bg-developer-purple/10 flex-1">
-                    Continue on WhatsApp
+                    Quick WhatsApp Chat
                   </Button>
                 </div>
               </form>
