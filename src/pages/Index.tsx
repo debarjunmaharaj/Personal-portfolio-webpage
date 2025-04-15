@@ -146,7 +146,7 @@ Message: ${formData.message}
           <div className="lg:w-1/2 flex justify-center relative mt-12 lg:mt-0">
             <div className="relative w-72 h-72 md:w-96 md:h-96 rotate-y perspective">
               <img 
-                src="https://raw.githubusercontent.com/debarjunmaharaj/Personal-portfolio-webpage/refs/heads/main/487216496_650713390886824_389349.png" 
+                src="https://scontent.fcgp3-1.fna.fbcdn.net/v/t39.30808-6/487216496_650713390886824_3893499008514343840_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeE9IRLJlnAPbttpVQs5a-cyPPxHDwyvM908_EcPDK8z3WYWBL1kVGbA0sBg06qJmO0e3pVoWtMNi6oWNyR0_b6p&_nc_ohc=m1Lj8u8PSG0Q7kNvwESyNyG&_nc_oc=AdmnQec6dGOGdUmaaS7qDduhkxYLUIaI7pTeDEhK9W9YABIB6si9DpB2biGeiYjdoi8&_nc_zt=23&_nc_ht=scontent.fcgp3-1.fna&_nc_gid=AunH6CSNFc3ds5kBL9WrmA&oh=00_AfEyHu2lQS5fxAHXXfqZ8QCC1tm522IhdoBJad53qtObOg&oe=6804699C" 
                 alt="Debarjun Chakraborty" 
                 className="w-full h-full object-cover rounded-2xl shadow-2xl"
               />
