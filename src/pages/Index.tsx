@@ -79,7 +79,7 @@ Message: ${formData.message}
   };
 
   const openWhatsApp = () => {
-    window.open('https://wa.me/+919876543210?text=Hi%20Debarjun%2C%20I%27m%20interested%20in%20your%20services', '_blank');
+    window.open('https://wa.me/+8801884189495?text=Hi%20Debarjun%2C%20I%27m%20interested%20in%20your%20services', '_blank');
   };
 
   const openFacebookPage = () => {
@@ -131,13 +131,13 @@ Message: ${formData.message}
             </div>
             
             <div className="flex mt-8 space-x-4">
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="hover:text-developer-purple transition-colors" aria-label="GitHub">
+              <a href="https://github.com/debarjunmaharaj" target="_blank" rel="noopener noreferrer" className="hover:text-developer-purple transition-colors" aria-label="GitHub">
                 <Github size={24} />
               </a>
-              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="hover:text-developer-purple transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/netfie/" target="_blank" rel="noopener noreferrer" className="hover:text-developer-purple transition-colors" aria-label="LinkedIn">
                 <Linkedin size={24} />
               </a>
-              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="hover:text-developer-purple transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/debarjunmaharaj" target="_blank" rel="noopener noreferrer" className="hover:text-developer-purple transition-colors" aria-label="Instagram">
                 <Instagram size={24} />
               </a>
             </div>
@@ -532,16 +532,16 @@ Message: ${formData.message}
                 <div>
                   <h3 className="text-lg font-bold mb-2">Education</h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    Bachelor of Technology in Computer Science
+                    Diploma in Computer Science
                   </p>
                   <p className="text-gray-500 dark:text-gray-400 text-sm">
-                    University Name, 2018
+                    NPC, Bangladesh
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold mb-2">Location</h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    Based in Kolkata, India
+                    Based in Chittagong, Bangladesh
                   </p>
                   <p className="text-gray-500 dark:text-gray-400 text-sm">
                     Available for remote work
@@ -695,8 +695,8 @@ Message: ${formData.message}
                     </div>
                     <div>
                       <h4 className="text-lg font-medium">Email</h4>
-                      <a href="mailto:debarjun@example.com" className="text-gray-600 dark:text-gray-300 hover:text-developer-purple">
-                        debarjun@example.com
+                      <a href="mailto:debarjunofficial@gmail.com" className="text-gray-600 dark:text-gray-300 hover:text-developer-purple">
+                        Debarjunofficial@gmail.com
                       </a>
                     </div>
                   </div>
@@ -707,8 +707,8 @@ Message: ${formData.message}
                     </div>
                     <div>
                       <h4 className="text-lg font-medium">Phone</h4>
-                      <a href="tel:+919876543210" className="text-gray-600 dark:text-gray-300 hover:text-developer-purple">
-                        +91 9876 543 210
+                      <a href="tel:+8801884189495" className="text-gray-600 dark:text-gray-300 hover:text-developer-purple">
+                        +880 188 4189 495
                       </a>
                     </div>
                   </div>
@@ -719,7 +719,7 @@ Message: ${formData.message}
                 <h3 className="text-xl font-bold mb-4">Follow Me</h3>
                 <div className="flex space-x-4">
                   <a 
-                    href="https://github.com/" 
+                    href="https://github.com/debarjunmaharaj" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="h-12 w-12 bg-developer-purple/10 rounded-xl flex items-center justify-center hover:bg-developer-purple hover:text-white transition-colors"
@@ -728,7 +728,7 @@ Message: ${formData.message}
                     <Github className="h-6 w-6" />
                   </a>
                   <a 
-                    href="https://linkedin.com/" 
+                    href="https://www.linkedin.com/in/netfie/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="h-12 w-12 bg-developer-purple/10 rounded-xl flex items-center justify-center hover:bg-developer-purple hover:text-white transition-colors"
@@ -737,7 +737,7 @@ Message: ${formData.message}
                     <Linkedin className="h-6 w-6" />
                   </a>
                   <a 
-                    href="https://instagram.com/" 
+                    href="https://www.instagram.com/debarjunmaharaj" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="h-12 w-12 bg-developer-purple/10 rounded-xl flex items-center justify-center hover:bg-developer-purple hover:text-white transition-colors"
@@ -824,13 +824,13 @@ Message: ${formData.message}
             </p>
             
             <div className="flex space-x-6">
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
+              <a href="https://github.com/debarjunmaharaj" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
                 <Github size={20} />
               </a>
-              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/netfie/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/debarjunmaharaj" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
             </div>
